@@ -1,0 +1,21 @@
+---
+# defaults file for ulogd2
+ulogd2_conf_template: templates/ulogd.conf.j2
+ulogd2_conf_dest: /etc/ulogd
+
+ulogd2_user: ulog
+ulogd2_logfile: syslog
+ulogd2_loglevel: 3
+ulogd2_lib_dir: /usr/lib/x86_64-linux-gnu/ulogd/
+
+ulogd2_stack:
+  - log1:NFLOG
+  - base1:BASE
+  - ifi1:IFINDEX
+  - ip2str1:IP2STR
+  - print1:PRINTPKT
+  - emu1:LOGEMU
+
+ulogd2_plugins: []
+ulogd2_global_options: {}
+ulogd2_config: {}

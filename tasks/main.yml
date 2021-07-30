@@ -1,0 +1,17 @@
+---
+# tasks file for ulogd2
+- name: Install ulogd2 package
+  ansible.builtin.apt:
+    pkg: ulogd2
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: Configure ulogd2
+  template:
+    src: "{{ ulogd2_conf_template }}"
+    dest: "{{ ulogd2_conf_dest }}"
+  become: yes
+  notify:
+    - restart ulogd2

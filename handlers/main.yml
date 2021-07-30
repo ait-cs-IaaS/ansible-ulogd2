@@ -1,0 +1,7 @@
+---
+# handlers file for ulogd2
+- name: restart ulogd2
+  service:
+    name: ulogd2
+    state: restarted
+  become: yes
