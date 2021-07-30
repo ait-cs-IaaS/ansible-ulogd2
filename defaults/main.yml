@@ -1,7 +1,7 @@
 ---
 # defaults file for ulogd2
 ulogd2_conf_template: templates/ulogd.conf.j2
-ulogd2_conf_dest: /etc/ulogd
+ulogd2_conf_dest: /etc/ulogd.conf
 
 ulogd2_user: ulog
 ulogd2_logfile: syslog
