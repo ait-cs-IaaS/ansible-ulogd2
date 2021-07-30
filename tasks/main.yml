@@ -12,6 +12,7 @@
   template:
     src: "{{ ulogd2_conf_template }}"
     dest: "{{ ulogd2_conf_dest }}"
+    mode: "0600"
   become: yes
   notify:
     - restart ulogd2
