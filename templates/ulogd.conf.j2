@@ -10,7 +10,7 @@ plugin="{{ (ulogd2_lib_dir, _plugin) | path_join }}"
 stack={{ ulogd2_stack | join(",") }}
 
 {% for key, val in ulogd2_global_options.items() %}
-{% if ' ' in val %}
+{% if val is string %}
 {{ key }}="{{ val }}"
 {% else %}
 {{ key }}={{ val }}
@@ -20,7 +20,7 @@ stack={{ ulogd2_stack | join(",") }}
 {% for _section, _options in ulogd2_config.items() %}
 [{{ _section }}]
 {% for key, val in _options.items() %}
-{% if ' ' in val %}
+{% if val is string %}
 {{ key }}="{{ val }}"
 {% else %}
 {{ key }}={{ val }}
